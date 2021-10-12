@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-video="media/code.mp4" data-background-video-loop data-background-video-loop-autoplay>
+					<h1>No le tengas miedo a la Programación</h1>
+				</section>
+				<section>
+					<section>
+						<h3 float: right>La máquina de Jacquard</h3>
+					</section>
+					<section>
+						<video data-autoplay src="media/jacquard.mp4"></video>
+					</section>
+				</section>
+				<section>
+					<section>
+						\begin{aligned}
+							\frac{1}{\sum_{i = 1}^n{i^2}}
+						\end{aligned}					
+					</section>
+
+					<section>
+						<pre class="stretch">
+						<code data-trim data-noescape> 
+						SUMSER   CSECT
+						USING  SUMSER,12          base register
+							LR     12,15              set addressability
+							LR     10,14              save r14
+							LE     4,=E'0'            s=0
+							LE     2,=E'1'            i=1
+						DO WHILE=(CE,2,LE,=E'1000') do i=1 to 1000
+							LER    0,2                  i
+							MER    0,2                  *i
+							LE     6,=E'1'              1
+							DER    6,0                  1/i**2
+							AER    4,6                  s=s+1/i**2
+							AE     2,=E'1'              i=i+1
+						ENDDO    ,                  enddo i
+							LA     0,4                format F13.4
+							LER    0,4                s
+							BAL    14,FORMATF         call formatf
+							MVC    PG(13),0(1)        retrieve result
+							XPRNT  PG,80              print buffer
+							BR     10                 exit
+							COPY   FORMATF            formatf code
+							PG       DC     CL80' '            buffer
+							END    SUMSER
+					
+						</code>
+						</pre>
+					</section>
+					<section>
+						<pre><code data-trim data-noescape>
+							sum(1.0 / (x*x)) for x in range(1, 1001))
+						</code></pre>
+					</section>
+
+			</section>
+			<section>
+				<pre>
+					<code data-trim data-noescape data-line-numbers="1|2|2-3|4-5|6">
+fruits = ["apple", "banana", "pineapple"]
+for fruit in fruits:
+	letters=0
+	for letter in fruit:
+	   	letters += 1
+	print("Number of letters in the word", fruit, ":", letters)
+					</code>
+				</pre>
+				<img src="media/frutas.png"> 
+
+
+			</section>
+
+			<section data-background-color="rgba(25,29,30,255)">
+				<img src="media/steve.jpg">
+			</section>
+			</div>
+		</div>
+		<script src="plugin/math/math.js"></script>
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				math: {
+     			 	mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+      				config: 'TeX-AMS_HTML-full',
+					// pass other options into `MathJax.Hub.Config()`
+					TeX: { Macros: { RR: "{\\bf R}" } }
+					},
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+			});
+		</script>
+	</body>
+</html>
