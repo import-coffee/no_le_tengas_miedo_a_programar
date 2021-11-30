@@ -7,6 +7,10 @@
   <a href="https://slides.com/"><img src="https://s3.amazonaws.com/static.slid.es/images/slides-github-banner-320x40.png?1" alt="Slides" width="160" height="20"></a>
 </p>
 
+No le tengas miedo a programar fue un taller impartido por Import Coffee en la Universidad Complutense de Madrid el día 30
+de Noviembre de 2021, con el objetivo de dar motivación, consejos y trucos para sentirse más cómodos programando.
+Puede encontrar nuestra presentación aquí https://import-coffee.github.io/no_le_tengas_miedo_a_programar/
+
 reveal.js is an open source HTML presentation framework. It enables anyone with a web browser to create fully featured and beautiful presentations for free. [Check out the live demo](https://revealjs.com/).
 
 The framework comes with a broad range of features including [nested slides](https://revealjs.com/vertical-slides/), [Markdown support](https://revealjs.com/markdown/), [Auto-Animate](https://revealjs.com/auto-animate/), [PDF export](https://revealjs.com/pdf-export/), [speaker notes](https://revealjs.com/speaker-view/), [LaTeX support](https://revealjs.com/math/), [syntax highlighted code](https://revealjs.com/code/) and much more.
